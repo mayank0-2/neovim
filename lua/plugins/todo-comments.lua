@@ -1,5 +1,4 @@
 return {
-	"folke/todo-comments.nvim",
-	opts = {},
-	event = {"BufReadPre", "BufNewFile"}
+	"folke/todo-comments.nvim"
+
 }
