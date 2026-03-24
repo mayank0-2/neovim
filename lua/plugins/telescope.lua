@@ -5,7 +5,15 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   config = function()
-    require("telescope").setup({})
+    require("telescope").setup({
+	defaults = {},
+	pickers = {
+		find_files = {
+			theme = "dropdown",
+		}
+	},
+	extensions = {}
+    })
 
     local builtin = require("telescope.builtin")
     
