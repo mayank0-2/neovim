@@ -6,10 +6,22 @@ return {
   },
   config = function()
     require("telescope").setup({
-	defaults = {},
+	defaults = {
+		layout_strategy = "center",
+		layout_config = {
+			center = {
+				width = 0.9,
+			},
+		},
+	},
 	pickers = {
 		find_files = {
 			theme = "dropdown",
+			layout_config = {
+				center = {
+					width = 0.9,
+				}
+			}
 		}
 	},
 	extensions = {}
