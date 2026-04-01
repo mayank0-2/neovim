@@ -7,8 +7,13 @@ return {
 			columns = {
 				"icon",
 			},
+			skip_confirm_for_simple_edits = true,
 			delete_to_trash = false,
 			autosave_changes = true,
+			win_options = {
+				wrap = true,	
+			}
 		})
+	
 	end
 }
