@@ -2,6 +2,7 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "ahmedkhalf/project.nvim",
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   config = function()
@@ -26,6 +27,8 @@ return {
 	},
 	extensions = {}
     })
+
+    require("telescope").load_extension("projects")
 
     local builtin = require("telescope.builtin")
     
