@@ -32,7 +32,7 @@ return {
             -- Explicitly recognize uv projects by checking for uv.lock
             root_dir = require("lspconfig.util").root_pattern(
               "uv.lock",
-              "pyproject.toml",
+              "pyproject.toml"
             ),
             before_init = function(_, config)
               local util = require("lspconfig.util")
