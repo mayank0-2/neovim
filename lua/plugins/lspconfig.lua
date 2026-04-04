@@ -5,6 +5,9 @@ return {
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
+    -- Tell the LSP servers about the advanced autocompletion capabilities from nvim-cmp
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
     -- Setup Mason to easily manage LSP servers
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -19,6 +22,7 @@ return {
       },
       handlers = {
         function(server_name)
+          vim.lsp.config(server_name, { capabilities = capabilities })
           vim.lsp.enable(server_name)
         end,
       },
