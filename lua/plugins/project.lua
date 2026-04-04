@@ -7,7 +7,4 @@ return {
 	config = function(_, opts)
 		require("project_nvim").setup(opts)
 	end,
-	keys = {
-		{ "<leader>fp", "<cmd>Telescope projects<CR>", desc = "Find Projects" },
-	},
 }
