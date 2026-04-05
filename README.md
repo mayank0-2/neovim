@@ -111,3 +111,5 @@ The **Leader Key** is set to `Space`.
 | `<leader>cct` | Toggle Copilot Chat window |
 | `<leader>cce` | Ask Copilot to explain selected code (Visual/Normal) |
 | `<leader>ccf` | Ask Copilot to fix diagnostic error under cursor |
+| `<leader>ccq` | Prompt for Quick Chat input |
+| `<leader>ccr` | Reset Copilot Chat (Start new chat) |
