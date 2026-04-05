@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>", { desc = 'Open Oil file explor
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })r
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })
 vim.keymap.set('n', '<leader>x', '<cmd>lclose<CR>', { desc = 'Close location list' })
 
 -- LSP Buffer-local keymaps (Attach these only when an LSP connects to the buffer)
