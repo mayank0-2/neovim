@@ -14,6 +14,7 @@ This is my personal Neovim configuration, bootstrapped and managed with [lazy.nv
 - **Git Integration:** `gitsigns.nvim`
 - **Project Management:** `project.nvim`
 - **Productivity:** `todo-comments.nvim`
+- **AI Assistant:** `copilot.lua`, `CopilotChat.nvim`
 
 ## 📋 Prerequisites
 
@@ -22,6 +23,7 @@ Ensure you have the following installed before proceeding:
 - **Neovim** (>= 0.8.0 recommended)
 - **Git**
 - **ripgrep** (Required for Telescope `live_grep`)
+- **Node.js** (>= 18.x, Required for GitHub Copilot)
 - **Nerd Font** (Required for icons to display correctly)
 
 ## 🛠️ Installation
@@ -98,3 +100,14 @@ The **Leader Key** is set to `Space`.
 | `<Tab>` | Select next item / expand snippet |
 | `<S-Tab>` | Select previous item |
 | `<C-b> / <C-f>` | Scroll documentation window |
+
+### 🤖 GitHub Copilot
+| Keys | Action |
+| ---- | ------ |
+| `<M-l>` | Accept Copilot suggestion (`Alt` + `l`) |
+| `<M-]>` | Next Copilot suggestion (`Alt` + `]`) |
+| `<M-[>` | Previous Copilot suggestion (`Alt` + `[`) |
+| `<C-]>` | Dismiss Copilot suggestion |
+| `<leader>cct` | Toggle Copilot Chat window |
+| `<leader>cce` | Ask Copilot to explain selected code (Visual/Normal) |
+| `<leader>ccf` | Ask Copilot to fix diagnostic error under cursor |
