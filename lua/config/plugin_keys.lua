@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>", { desc = 'Open Oil file explor
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })r
 vim.keymap.set('n', '<leader>x', '<cmd>lclose<CR>', { desc = 'Close location list' })
 
 -- LSP Buffer-local keymaps (Attach these only when an LSP connects to the buffer)
@@ -38,7 +38,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Copilot
 -- Note: <M-...> represents the Alt (or Option) key
-vim.keymap.set('i', '<M-l>', function() require("copilot.suggestion").accept() end, { desc = 'Accept Copilot suggestion' })
 vim.keymap.set('i', '<M-]>', function() require("copilot.suggestion").next() end, { desc = 'Next Copilot suggestion' })
 vim.keymap.set('i', '<M-[>', function() require("copilot.suggestion").prev() end, { desc = 'Previous Copilot suggestion' })
 vim.keymap.set('i', '<C-]>', function() require("copilot.suggestion").dismiss() end, { desc = 'Dismiss Copilot suggestion' })
