@@ -29,9 +29,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts) -- Ctrl + k
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
   end,
 })
+
+-- Copilot
+-- Note: <M-...> represents the Alt (or Option) key
+vim.keymap.set('i', '<M-l>', function() require("copilot.suggestion").accept() end, { desc = 'Accept Copilot suggestion' })
+vim.keymap.set('i', '<M-]>', function() require("copilot.suggestion").next() end, { desc = 'Next Copilot suggestion' })
+vim.keymap.set('i', '<M-[>', function() require("copilot.suggestion").prev() end, { desc = 'Previous Copilot suggestion' })
+vim.keymap.set('i', '<C-]>', function() require("copilot.suggestion").dismiss() end, { desc = 'Dismiss Copilot suggestion' })
+
+-- Copilot Chat
+vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatToggle<CR>', { desc = 'CopilotChat - Toggle' })
+vim.keymap.set({ 'n', 'v' }, '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = 'CopilotChat - Explain code' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'CopilotChat - Fix Diagnostic' })
