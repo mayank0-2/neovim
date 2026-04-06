@@ -46,9 +46,6 @@ vim.keymap.set('i', '<C-]>', function() require("copilot.suggestion").dismiss() 
 vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatToggle<CR>', { desc = 'CopilotChat - Toggle' })
 vim.keymap.set({ 'n', 'v' }, '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = 'CopilotChat - Explain code' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'CopilotChat - Fix Diagnostic' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ccq', function()
-  local input = vim.fn.input("Quick Chat: ")
-  if input ~= "" then
-    vim.cmd("CopilotChat " .. input)
-  end
-end, { desc = 'CopilotChat - Quick chat' })
+
+-- Git / Neogit
+vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Open Neogit status' })

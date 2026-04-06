@@ -11,7 +11,7 @@ This is my personal Neovim configuration, bootstrapped and managed with [lazy.nv
 - **LSP & Autocompletion:** `nvim-lspconfig`, `mason.nvim`, `nvim-cmp`
 - **Syntax Highlighting:** `nvim-treesitter`
 - **UI & Aesthetics:** `lualine.nvim`, `nvim-web-devicons`
-- **Git Integration:** `gitsigns.nvim`
+- **Git Integration:** `gitsigns.nvim`, `neogit`
 - **Project Management:** `project.nvim`
 - **Productivity:** `todo-comments.nvim`
 - **AI Assistant:** `copilot.lua`, `CopilotChat.nvim`
@@ -60,6 +60,11 @@ The **Leader Key** is set to `Space`.
 | `<leader>fp` | Find projects | Project.nvim + Telescope |
 
 **Using Oil.nvim:** When you press `<leader>fe`, it opens the directory as a standard text buffer. You can rename, delete, or move files just by editing the text. Save the buffer (`:w`) to apply the changes to your filesystem!
+
+### 🌿 Git Management
+| Keys | Action | Plugin |
+| ---- | ------ | ------ |
+| `<leader>gg` | Open Git status/interface | Neogit |
 
 ### ✨ Formatting (Conform)
 | Keys | Action | Plugin |
@@ -111,5 +116,3 @@ The **Leader Key** is set to `Space`.
 | `<leader>cct` | Toggle Copilot Chat window |
 | `<leader>cce` | Ask Copilot to explain selected code (Visual/Normal) |
 | `<leader>ccf` | Ask Copilot to fix diagnostic error under cursor |
-| `<leader>ccq` | Prompt for Quick Chat input |
-| `<leader>ccr` | Reset Copilot Chat (Start new chat) |
