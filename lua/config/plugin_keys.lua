@@ -13,6 +13,9 @@ vim.keymap.set('n', '<leader>fp', '<cmd>Telescope projects<CR>', { desc = 'Find 
 -- Oil
 vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>", { desc = 'Open Oil file explorer' })
 
+-- Neo-tree
+vim.keymap.set("n", "<leader>ft", "<cmd>Neotree toggle<CR>", { desc = 'Toggle Neo-tree file explorer' })
+
 -- LSP Diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
