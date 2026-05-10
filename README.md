@@ -6,7 +6,7 @@ This is my personal Neovim configuration, bootstrapped and managed with [lazy.nv
 
 - **Plugin Manager:** `lazy.nvim`
 - **Fuzzy Finder:** `telescope.nvim` 
-- **File Explorer:** `oil.nvim`
+- **File Explorer:** `oil.nvim`, `neo-tree.nvim`
 - **Formatting:** `conform.nvim`
 - **LSP & Autocompletion:** `nvim-lspconfig`, `mason.nvim`, `nvim-cmp`
 - **Syntax Highlighting:** `nvim-treesitter`
@@ -57,6 +57,7 @@ The **Leader Key** is set to `Space`.
 | `<leader>fb` | Find open buffers | Telescope |
 | `<leader>fh` | Help tags | Telescope |
 | `<leader>fe` | Open file explorer | Oil.nvim |
+| `<leader>ft` | Toggle side panel tree | Neo-tree |
 | `<leader>fp` | Find projects | Project.nvim + Telescope |
 
 **Using Oil.nvim:** When you press `<leader>fe`, it opens the directory as a standard text buffer. You can rename, delete, or move files just by editing the text. Save the buffer (`:w`) to apply the changes to your filesystem!
@@ -65,6 +66,11 @@ The **Leader Key** is set to `Space`.
 | Keys | Action | Plugin |
 | ---- | ------ | ------ |
 | `<leader>gg` | Open Git status/interface | Neogit |
+**Using Neogit:** After opening the Neogit interface with `<leader>gg`, you can manage your repository using the following default keys:
+- **Commit:** Press `c` to open the commit menu, then `c` again to write your commit message.
+- **Push:** Press `P` (Shift+p) to open the push menu, then `p` to push to origin.
+- **Pull:** Press `p` to open the pull menu, then `p` to pull from origin.
+- **Rebase:** Press `r` to open the rebase menu, then choose your rebase target (e.g., `e` for elsewhere, `p` for pull).
 
 ### ✨ Formatting (Conform)
 | Keys | Action | Plugin |
