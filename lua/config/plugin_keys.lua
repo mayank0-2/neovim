@@ -52,3 +52,17 @@ vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>',
 
 -- Git / Neogit
 vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Open Neogit status' })
+
+-- Utility / Universal Close
+vim.keymap.set("n", "<Esc>", function()
+  -- Clear search highlighting
+  vim.cmd("noh")
+  
+  -- Close any open floating windows
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local config = vim.api.nvim_win_get_config(win)
+    if config.relative ~= "" then
+      vim.api.nvim_win_close(win, false)
+    end
+  end
+end, { desc = "Clear search and close floating windows" })
