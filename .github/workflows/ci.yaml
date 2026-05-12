@@ -15,7 +15,7 @@ jobs:
       - name: Check Neovim version
         run: nvim --version
 
-      - name: Run Neovim config test
+      - name: Run Neovim healthCheck
         run: |
           # Example: Run a simple Neovim command to check if config loads
-          nvim --headless -c 'echo "Neovim config loaded successfully"' -c 'q'   
+          nvim --headless -c 'checkhealth' -c "q"
