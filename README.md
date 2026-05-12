@@ -62,6 +62,12 @@ The **Leader Key** is set to `Space`.
 
 **Using Oil.nvim:** When you press `<leader>fe`, it opens the directory as a standard text buffer. You can rename, delete, or move files just by editing the text. Save the buffer (`:w`) to apply the changes to your filesystem!
 
+### 📑 Working with Tabs
+- **Open in New Tab (Telescope/Oil):** Press `<C-t>` (`Ctrl` + `t`) on a selected file to open it in a new tab.
+- **Standard Commands:** Use `:tabedit <filename>` to open a specific file or `:tabnew` for a blank tab.
+- **Navigate Tabs:** `gt` (next tab), `gT` (previous tab), `{number}gt` (go to tab number).
+- **Close Tab:** `:tabclose` or `:q`.
+
 ### 🌿 Git Management
 | Keys | Action | Plugin |
 | ---- | ------ | ------ |
