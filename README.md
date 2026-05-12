@@ -68,6 +68,13 @@ The **Leader Key** is set to `Space`.
 - **Navigate Tabs:** `gt` (next tab), `gT` (previous tab), `{number}gt` (go to tab number).
 - **Close Tab:** `:tabclose` or `:q`.
 
+### 🪟 Working with Splits
+- **Create Splits:** `<C-w>v` for a vertical split, `<C-w>s` for a horizontal split.
+- **Navigate Splits:** Use `<C-w>` followed by directional keys `h` (left), `j` (down), `k` (up), `l` (right).
+- **Resize Splits:** `<C-w>>` / `<C-w><` to adjust width, `<C-w>+` / `<C-w>-` to adjust height, and `<C-w>=` to equalize all splits.
+- **Close Split:** `:q` or `<C-w>q`.
+- **Open in Split (Telescope):** Press `<C-v>` for a vertical split or `<C-x>` for a horizontal split on a selected file.
+
 ### 🌿 Git Management
 | Keys | Action | Plugin |
 | ---- | ------ | ------ |
