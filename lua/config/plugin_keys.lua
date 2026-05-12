@@ -16,27 +16,6 @@ vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>", { desc = 'Open Oil file explor
 -- Neo-tree
 vim.keymap.set("n", "<leader>ft", "<cmd>Neotree toggle<CR>", { desc = 'Toggle Neo-tree file explorer' })
 
--- LSP Diagnostics Configuration
-vim.diagnostic.config({
-  virtual_text = true, -- Shows inline text at the end of the line
-  signs = true,
-  underline = true,    -- Squiggly lines under the error
-  update_in_insert = false,
-  severity_sort = true,
-  float = {
-    border = "rounded",
-    source = "always",
-  },
-})
-
--- Automatically show diagnostic popup on hover (like VS Code)
-vim.api.nvim_create_autocmd("CursorHold", {
-  group = vim.api.nvim_create_augroup("HoverDiagnostics", { clear = true }),
-  callback = function()
-    vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
-  end,
-})
-
 -- LSP Diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
