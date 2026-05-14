@@ -53,6 +53,18 @@ vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>',
 -- Git / Neogit
 vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Open Neogit status' })
 
+-- Diffview
+vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>', { desc = 'Open Diffview' })
+vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory %<CR>', { desc = 'File git history' })
+
+-- DAP
+vim.keymap.set('n', '<leader>db', function() require("dap").toggle_breakpoint() end, { desc = 'Toggle breakpoint' })
+vim.keymap.set('n', '<leader>dc', function() require("dap").continue() end, { desc = 'DAP continue' })
+vim.keymap.set('n', '<leader>di', function() require("dap").step_into() end, { desc = 'DAP step into' })
+vim.keymap.set('n', '<leader>do', function() require("dap").step_over() end, { desc = 'DAP step over' })
+vim.keymap.set('n', '<leader>dO', function() require("dap").step_out() end, { desc = 'DAP step out' })
+vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, { desc = 'Toggle DAP UI' })
+
 -- Utility / Universal Close
 vim.keymap.set("n", "<Esc>", function()
   -- Clear search highlighting

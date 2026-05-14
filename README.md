@@ -1,137 +1,143 @@
 # Neovim Configuration
 
-This is my personal Neovim configuration, bootstrapped and managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
+Personal Neovim configuration managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
-## 🚀 Features & Plugins
+## Plugins
 
-- **Plugin Manager:** `lazy.nvim`
-- **Fuzzy Finder:** `telescope.nvim` 
-- **File Explorer:** `oil.nvim`, `neo-tree.nvim`
-- **Formatting:** `conform.nvim`
-- **LSP & Autocompletion:** `nvim-lspconfig`, `mason.nvim`, `nvim-cmp`
-- **Syntax Highlighting:** `nvim-treesitter`
-- **UI & Aesthetics:** `lualine.nvim`, `nvim-web-devicons`
-- **Git Integration:** `gitsigns.nvim`, `neogit`
-- **Project Management:** `project.nvim`
-- **Productivity:** `todo-comments.nvim`
-- **AI Assistant:** `copilot.lua`, `CopilotChat.nvim`
+| Category | Plugins |
+|----------|---------|
+| Plugin Manager | `lazy.nvim` |
+| LSP & Completion | `nvim-lspconfig`, `mason.nvim`, `nvim-cmp`, `nvim-lint` |
+| Syntax | `nvim-treesitter` |
+| Formatting | `conform.nvim` |
+| Debugger | `nvim-dap`, `nvim-dap-ui` |
+| Fuzzy Finder | `telescope.nvim` |
+| File Explorer | `oil.nvim`, `neo-tree.nvim` |
+| Git | `gitsigns.nvim`, `neogit`, `diffview.nvim` |
+| AI | `copilot.lua`, `CopilotChat.nvim` |
+| UI | `lualine.nvim`, `which-key.nvim`, `indent-blankline.nvim`, `nvim-web-devicons` |
+| Productivity | `todo-comments.nvim`, `nvim-autopairs`, `vim-illuminate`, `project.nvim` |
 
-## 📋 Prerequisites
+## Prerequisites
 
-Ensure you have the following installed before proceeding:
-
-- **Neovim** (>= 0.8.0 recommended)
+- **Neovim** >= 0.9.0
 - **Git**
-- **ripgrep** (Required for Telescope `live_grep`)
-- **Node.js** (>= 18.x, Required for GitHub Copilot)
-- **Nerd Font** (Required for icons to display correctly)
+- **ripgrep** — required for Telescope live grep
+- **Node.js** >= 18.x — required for GitHub Copilot
+- **Nerd Font** — required for icons
 
-## 🛠️ Installation
+## Installation
 
-1. **Backup your existing configuration** (if applicable):
-   ```bash
-   mv ~/.config/nvim ~/.config/nvim.bak
-   mv ~/.local/share/nvim ~/.local/share/nvim.bak
-   ```
+```bash
+# Backup existing config
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
-2. **Clone the repository**:
-   ```bash
-   git clone <your-repository-url> ~/.config/nvim
-   ```
+# Clone
+git clone <your-repository-url> ~/.config/nvim
 
-3. **Start Neovim**:
-   ```bash
-   nvim
-   ```
-   *`lazy.nvim` will automatically bootstrap and install all configured plugins.*
+# Launch — lazy.nvim auto-installs everything
+nvim
+```
 
-## ⌨️ Usage & Keybindings
+## Keybindings
 
-The **Leader Key** is set to `Space`.
+Leader key: `Space`
 
-### 🔍 Navigation & Search (Telescope & Oil)
-| Keys | Action | Plugin |
-| ---- | ------ | ------ |
+### File Navigation
+
+| Key | Action | Plugin |
+|-----|--------|--------|
 | `<leader>ff` | Find files | Telescope |
-| `<leader>fg` | Live grep (search text) | Telescope |
-| `<leader>fb` | Find open buffers | Telescope |
+| `<leader>fg` | Live grep | Telescope |
+| `<leader>fb` | Open buffers | Telescope |
 | `<leader>fh` | Help tags | Telescope |
-| `<leader>fe` | Open file explorer | Oil.nvim |
-| `<leader>ft` | Toggle side panel tree | Neo-tree |
-| `<leader>fp` | Find projects | Project.nvim + Telescope |
+| `<leader>fp` | Find projects | Telescope + project.nvim |
+| `<leader>fe` | File explorer (edit-style) | oil.nvim |
+| `<leader>ft` | Toggle file tree | Neo-tree |
 
-**Using Oil.nvim:** When you press `<leader>fe`, it opens the directory as a standard text buffer. You can rename, delete, or move files just by editing the text. Save the buffer (`:w`) to apply the changes to your filesystem!
+### LSP
 
-### 📑 Working with Tabs
-- **Open in New Tab (Telescope/Oil):** Press `<C-t>` (`Ctrl` + `t`) on a selected file to open it in a new tab.
-- **Standard Commands:** Use `:tabedit <filename>` to open a specific file or `:tabnew` for a blank tab.
-- **Navigate Tabs:** `gt` (next tab), `gT` (previous tab), `{number}gt` (go to tab number).
-- **Close Tab:** `:tabclose` or `:q`.
+> Active only when a language server is attached.
 
-### 🪟 Working with Splits
-- **Create Splits:** `<C-w>v` for a vertical split, `<C-w>s` for a horizontal split.
-- **Navigate Splits:** Use `<C-w>` followed by directional keys `h` (left), `j` (down), `k` (up), `l` (right).
-- **Resize Splits:** `<C-w>>` / `<C-w><` to adjust width, `<C-w>+` / `<C-w>-` to adjust height, and `<C-w>=` to equalize all splits.
-- **Close Split:** `:q` or `<C-w>q`.
-- **Open in Split (Telescope):** Press `<C-v>` for a vertical split or `<C-x>` for a horizontal split on a selected file.
-
-### 🌿 Git Management
-| Keys | Action | Plugin |
-| ---- | ------ | ------ |
-| `<leader>gg` | Open Git status/interface | Neogit |
-**Using Neogit:** After opening the Neogit interface with `<leader>gg`, you can manage your repository using the following default keys:
-- **Commit:** Press `c` to open the commit menu, then `c` again to write your commit message.
-- **Push:** Press `P` (Shift+p) to open the push menu, then `p` to push to origin.
-- **Pull:** Press `p` to open the pull menu, then `p` to pull from origin.
-- **Rebase:** Press `r` to open the rebase menu, then choose your rebase target (e.g., `e` for elsewhere, `p` for pull).
-
-### ✨ Formatting (Conform)
-| Keys | Action | Plugin |
-| ---- | ------ | ------ |
-| `<leader>f` | Format the current buffer | Conform |
-*Note: Files will also automatically format on save using standard formatters like `prettier`, `black`, `gofmt`, etc.*
-
-### 🧠 LSP & Code Intelligence
-*These keybindings are active only when a Language Server is attached to the current file.*
-
-| Keys | Action |
-| ---- | ------ |
+| Key | Action |
+|-----|--------|
 | `gd` | Go to definition |
 | `gD` | Go to declaration |
 | `gr` | Find references |
 | `gi` | Go to implementation |
-| `K`  | Show hover documentation |
-| `<C-k>` | Show signature help |
-| `<leader>rn` | Rename symbol globally |
-| `<leader>ca` | Open code actions (e.g., auto-import) |
+| `K` | Hover documentation |
+| `<C-k>` | Signature help |
+| `<leader>rn` | Rename symbol |
+| `<leader>ca` | Code actions |
 
-**Using Code Actions (`<leader>ca`):** This is an incredibly powerful feature! Place your cursor on an error, a warning, or an unimported module and press `<leader>ca`. This will open a menu of automatic fixes, refactoring options, and auto-imports provided directly by your language server.
+### Diagnostics
 
-### 🚨 Diagnostics (Errors & Warnings)
-| Keys | Action |
-| ---- | ------ |
-| `<leader>e` | Show full error message in a floating window |
-| `[d` | Jump to previous diagnostic |
-| `]d` | Jump to next diagnostic |
-| `<leader>q` | Open location list (shows all errors in file) |
+| Key | Action |
+|-----|--------|
+| `<leader>e` | Show diagnostic float |
+| `[d` | Previous diagnostic |
+| `]d` | Next diagnostic |
+| `<leader>q` | Open location list |
 | `<leader>x` | Close location list |
 
-### 💡 Autocompletion (Nvim-cmp)
-| Keys | Action |
-| ---- | ------ |
-| `<C-Space>` | Manually trigger autocompletion |
-| `<CR>` | Confirm selected item (and auto-import if needed) |
-| `<Tab>` | Select next item / expand snippet |
-| `<S-Tab>` | Select previous item |
-| `<C-b> / <C-f>` | Scroll documentation window |
+### Completion
 
-### 🤖 GitHub Copilot
-| Keys | Action |
-| ---- | ------ |
-| `<M-l>` | Accept Copilot suggestion (`Alt` + `l`) |
-| `<M-]>` | Next Copilot suggestion (`Alt` + `]`) |
-| `<M-[>` | Previous Copilot suggestion (`Alt` + `[`) |
-| `<C-]>` | Dismiss Copilot suggestion |
-| `<leader>cct` | Toggle Copilot Chat window |
-| `<leader>cce` | Ask Copilot to explain selected code (Visual/Normal) |
-| `<leader>ccf` | Ask Copilot to fix diagnostic error under cursor |
+| Key | Action |
+|-----|--------|
+| `<Tab>` | Accept Copilot / next item / expand snippet |
+| `<S-Tab>` | Previous item |
+| `<CR>` | Confirm selection |
+| `<C-Space>` | Trigger completion manually |
+| `<C-e>` | Abort completion |
+| `<C-b>` / `<C-f>` | Scroll docs |
+
+### Git
+
+| Key | Action | Plugin |
+|-----|--------|--------|
+| `<leader>gg` | Git status | Neogit |
+| `<leader>gd` | Diff view | Diffview |
+| `<leader>gh` | File git history | Diffview |
+
+**Neogit quick reference:** `c c` commit · `P p` push · `p p` pull · `r` rebase menu
+
+### Debugger (DAP)
+
+| Key | Action |
+|-----|--------|
+| `<leader>db` | Toggle breakpoint |
+| `<leader>dc` | Continue |
+| `<leader>di` | Step into |
+| `<leader>do` | Step over |
+| `<leader>dO` | Step out |
+| `<leader>du` | Toggle DAP UI |
+
+### AI (Copilot)
+
+| Key | Action |
+|-----|--------|
+| `<Tab>` | Accept inline suggestion (insert mode) |
+| `<M-]>` | Next suggestion |
+| `<M-[>` | Previous suggestion |
+| `<C-]>` | Dismiss suggestion |
+| `<leader>cct` | Toggle Copilot Chat |
+| `<leader>cce` | Explain selected code |
+| `<leader>ccf` | Fix diagnostic under cursor |
+
+### Splits & Tabs
+
+| Key | Action |
+|-----|--------|
+| `<C-w>v` | Vertical split |
+| `<C-w>s` | Horizontal split |
+| `<C-w>hjkl` | Navigate splits |
+| `gt` / `gT` | Next / previous tab |
+| `<C-t>` | Open in new tab (Telescope) |
+| `<C-v>` / `<C-x>` | Open in split (Telescope) |
+
+### Utility
+
+| Key | Action |
+|-----|--------|
+| `<Esc>` | Clear search highlight + close floats |
