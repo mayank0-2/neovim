@@ -73,7 +73,5 @@ return {
       },
     })
 
-    -- Example of setting up other servers (after adding them to ensure_installed above):
-    -- require("lspconfig").ts_ls.setup({})
   end,
 }
