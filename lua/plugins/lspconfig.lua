@@ -1,12 +1,12 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  },
-  config = function()
-    -- Tell the LSP servers about the advanced autocompletion capabilities from nvim-cmp
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	},
+	config = function()
+		-- Tell the LSP servers about the advanced autocompletion capabilities from nvim-cmp
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- Setup Mason to easily manage LSP servers
     require("mason").setup()
@@ -15,7 +15,7 @@ return {
         "lua_ls", 
         "clangd",     -- C/C++
         "gopls",      -- Go
-        "pyright",    -- Python
+        "ty",    -- Python
         "ts_ls",      -- JS/TS
         "elixirls",   -- Elixir
         "jdtls",      -- Java
@@ -73,7 +73,5 @@ return {
       },
     })
 
-    -- Example of setting up other servers (after adding them to ensure_installed above):
-    -- require("lspconfig").ts_ls.setup({})
   end,
 }
