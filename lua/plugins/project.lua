@@ -11,9 +11,8 @@ return {
 			vim.opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 		end
 		update_title()
-		vim.api.nvim_create_autocmd("DirChanged", "VimEnter", {
+		vim.api.nvim_create_autocmd({ "DirChanged", "VimEnter" }, {
 			callback = update_title,
 		})
 	end,
 }
-
