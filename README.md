@@ -8,7 +8,7 @@ A modern, feature-rich Neovim setup built with `lazy.nvim`.
 ## 🚀 Features
 * **Plugin Management:** `lazy.nvim`
 * **LSP & Formatting:** Mason, nvim-lspconfig, Conform, nvim-lint
-* **Autocompletion:** nvim-cmp, LuaSnip, Copilot
+* **Autocompletion:** nvim-cmp, LuaSnip
 * **UI & Theming:** Nightfox, Tokyonight, Lualine, Indent Blankline
 * **Navigation & File Management:** Telescope, Neo-tree, Oil
 * **Git Integration:** Neogit, Gitsigns, Diffview
@@ -25,7 +25,6 @@ A modern, feature-rich Neovim setup built with `lazy.nvim`.
 | Fuzzy Finder | `telescope.nvim` |
 | File Explorer | `oil.nvim`, `neo-tree.nvim` |
 | Git | `gitsigns.nvim`, `neogit`, `diffview.nvim` |
-| AI | `copilot.lua`, `CopilotChat.nvim` |
 | UI | `lualine.nvim`, `which-key.nvim`, `indent-blankline.nvim`, `nvim-web-devicons` |
 | Productivity | `todo-comments.nvim`, `nvim-autopairs`, `vim-illuminate`, `project.nvim` |
 ## ⌨️ Keybindings
@@ -37,7 +36,6 @@ A modern, feature-rich Neovim setup built with `lazy.nvim`.
 - **Neovim** >= 0.9.0
 - **Git**
 - **ripgrep** — required for Telescope live grep
-- **Node.js** >= 18.x — required for GitHub Copilot
 - **Nerd Font** — required for icons
 ### 📁 File Explorer & Search
 | Key | Description |
@@ -117,19 +115,10 @@ Leader key: `Space`
 | `<leader>f` | Format buffer (Conform) |
 
 ### Completion
-### 🤖 Copilot & AI
-| Key (Mode) | Description |
-|------------|-------------|
-| `<M-]>` (i) | Next Copilot suggestion (Alt + `]`) |
-| `<M-[>` (i) | Previous Copilot suggestion (Alt + `[`) |
-| `<C-]>` (i) | Dismiss Copilot suggestion (Ctrl + `]`) |
-| `<leader>cct` | Toggle Copilot Chat |
-| `<leader>cce` | Copilot Chat: Explain code (Normal/Visual) |
-| `<leader>ccf` | Copilot Chat: Fix diagnostic (Normal/Visual) |
 
 | Key | Action |
 |-----|--------|
-| `<Tab>` | Accept Copilot / next item / expand snippet |
+| `<Tab>` | Next item / expand snippet |
 | `<S-Tab>` | Previous item |
 | `<CR>` | Confirm selection |
 | `<C-Space>` | Trigger completion manually |
@@ -170,26 +159,16 @@ Leader key: `Space`
 | `<leader>dO` | DAP step out |
 | `<leader>du` | Toggle DAP UI |
 
-### AI (Copilot)
 ### ⌨️ Completion (Insert Mode)
 | Key | Description |
 |-----|-------------|
-| `<Tab>` | Accept Copilot / Select Next Item / Expand Snippet |
+| `<Tab>` | Select Next Item / Expand Snippet |
 | `<S-Tab>` | Select Previous Item |
 | `<CR>` | Confirm selection |
 | `<C-Space>` | Trigger completion |
 | `<C-e>` | Abort completion |
 | `<C-b>` / `<C-f>`| Scroll docs up / down |
 
-| Key | Action |
-|-----|--------|
-| `<Tab>` | Accept inline suggestion (insert mode) |
-| `<M-]>` | Next suggestion |
-| `<M-[>` | Previous suggestion |
-| `<C-]>` | Dismiss suggestion |
-| `<leader>cct` | Toggle Copilot Chat |
-| `<leader>cce` | Explain selected code |
-| `<leader>ccf` | Fix diagnostic under cursor |
 ### 🧹 Utility
 | Key | Description |
 |-----|-------------|

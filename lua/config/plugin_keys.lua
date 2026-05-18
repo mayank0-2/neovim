@@ -40,17 +40,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Copilot
--- Note: <M-...> represents the Alt (or Option) key
-vim.keymap.set('i', '<M-]>', function() require("copilot.suggestion").next() end, { desc = 'Next Copilot suggestion' })
-vim.keymap.set('i', '<M-[>', function() require("copilot.suggestion").prev() end, { desc = 'Previous Copilot suggestion' })
-vim.keymap.set('i', '<C-]>', function() require("copilot.suggestion").dismiss() end, { desc = 'Dismiss Copilot suggestion' })
-
--- Copilot Chat
-vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatToggle<CR>', { desc = 'CopilotChat - Toggle' })
-vim.keymap.set({ 'n', 'v' }, '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = 'CopilotChat - Explain code' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'CopilotChat - Fix Diagnostic' })
-
 -- Git / Neogit
 vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Open Neogit status' })
 
