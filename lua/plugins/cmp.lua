@@ -26,10 +26,7 @@ return {
         
         -- Use Tab and Shift-Tab to navigate the completion list
         ['<Tab>'] = cmp.mapping(function(fallback)
-          local copilot = require("copilot.suggestion")
-          if copilot.is_visible() then
-            copilot.accept()
-          elseif cmp.visible() then
+          if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()

@@ -14,7 +14,6 @@ Personal Neovim configuration managed with [lazy.nvim](https://github.com/folke/
 | Fuzzy Finder | `telescope.nvim` |
 | File Explorer | `oil.nvim`, `neo-tree.nvim` |
 | Git | `gitsigns.nvim`, `neogit`, `diffview.nvim` |
-| AI | `copilot.lua`, `CopilotChat.nvim` |
 | UI | `lualine.nvim`, `which-key.nvim`, `indent-blankline.nvim`, `nvim-web-devicons` |
 | Productivity | `todo-comments.nvim`, `nvim-autopairs`, `vim-illuminate`, `project.nvim` |
 
@@ -23,7 +22,6 @@ Personal Neovim configuration managed with [lazy.nvim](https://github.com/folke/
 - **Neovim** >= 0.9.0
 - **Git**
 - **ripgrep** — required for Telescope live grep
-- **Node.js** >= 18.x — required for GitHub Copilot
 - **Nerd Font** — required for icons
 
 ## Installation
@@ -85,7 +83,7 @@ Leader key: `Space`
 
 | Key | Action |
 |-----|--------|
-| `<Tab>` | Accept Copilot / next item / expand snippet |
+| `<Tab>` | Next item / expand snippet |
 | `<S-Tab>` | Previous item |
 | `<CR>` | Confirm selection |
 | `<C-Space>` | Trigger completion manually |
@@ -112,18 +110,6 @@ Leader key: `Space`
 | `<leader>do` | Step over |
 | `<leader>dO` | Step out |
 | `<leader>du` | Toggle DAP UI |
-
-### AI (Copilot)
-
-| Key | Action |
-|-----|--------|
-| `<Tab>` | Accept inline suggestion (insert mode) |
-| `<M-]>` | Next suggestion |
-| `<M-[>` | Previous suggestion |
-| `<C-]>` | Dismiss suggestion |
-| `<leader>cct` | Toggle Copilot Chat |
-| `<leader>cce` | Explain selected code |
-| `<leader>ccf` | Fix diagnostic under cursor |
 
 ### Splits & Tabs
 
