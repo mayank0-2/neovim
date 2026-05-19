@@ -4,13 +4,17 @@ return {
 	event = { "InsertLeave", "TextChanged" }, -- lazy load on trigger events
 	opts = {
 		enabled = true,
-		execution_message = {
-			message = function()
-				-- Return an empty string to disable the "AutoSave: saved at..." message
-				return "AutoSaved"
-			end,
-            dim = 0.18,
-            cleaning_interval = 1250,
-		},
 	},
+	config = function(_, opts)
+		require("auto-save").setup(opts)
+
+		-- Recreate the removed execution_message using Neovim's autocmd API
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "AutoSaveWritePost",
+			group = vim.api.nvim_create_augroup("AutoSaveMessage", { clear = true }),
+			callback = function()
+				vim.api.nvim_echo({ { "AutoSaved", "NonText" } }, false, {})
+			end,
+		})
+	end,
 }   

@@ -1,13 +1,14 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	version = false,
-	branch = "main",
+	branch = "master",
 	lazy = false,
 	build = ':TSUpdate',
 	dependencies = {
 		{ 
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			version = false,
+			branch = "master",
 		},
 	},
 	config = function()
