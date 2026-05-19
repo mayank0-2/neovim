@@ -138,6 +138,7 @@ Leader key: `Space`
 | `<leader>gg` | Git status | Neogit |
 | `<leader>gd` | Diff view | Diffview |
 | `<leader>gh` | File git history | Diffview |
+| `<leader>gc` | Close diff view | Diffview |
 
 **Neogit quick reference:** `c c` commit · `P p` push · `p p` pull · `r` rebase menu
 
@@ -172,7 +173,7 @@ Leader key: `Space`
 ### 🧹 Utility
 | Key | Description |
 |-----|-------------|
-| `<Esc>` | Clear search highlighting & close open floating windows |
+| `<Esc>` | Clear search highlighting, close open floats, and close Diffview |
 
 ### Splits & Tabs
 
@@ -189,7 +190,7 @@ Leader key: `Space`
 
 | Key | Action |
 |-----|--------|
-| `<Esc>` | Clear search highlight + close floats |
+| `<Esc>` | Clear search highlight + close floats + close Diffview |
 ## ⚙️ Custom Commands
 * `:ASToggle` - Toggle Auto-save
 * `:MergeTool` - Open Diffview as a merge tool
