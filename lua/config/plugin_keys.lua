@@ -2,6 +2,7 @@
 vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fc', function() require('telescope.builtin').colorscheme({ enable_preview = true }) end, { desc = 'Telescope colorscheme' })
 vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = 'Telescope help tags' })
 
 -- Conform
@@ -38,17 +39,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
   end,
 })
-
--- Copilot
--- Note: <M-...> represents the Alt (or Option) key
-vim.keymap.set('i', '<M-]>', function() require("copilot.suggestion").next() end, { desc = 'Next Copilot suggestion' })
-vim.keymap.set('i', '<M-[>', function() require("copilot.suggestion").prev() end, { desc = 'Previous Copilot suggestion' })
-vim.keymap.set('i', '<C-]>', function() require("copilot.suggestion").dismiss() end, { desc = 'Dismiss Copilot suggestion' })
-
--- Copilot Chat
-vim.keymap.set('n', '<leader>cct', '<cmd>CopilotChatToggle<CR>', { desc = 'CopilotChat - Toggle' })
-vim.keymap.set({ 'n', 'v' }, '<leader>cce', '<cmd>CopilotChatExplain<CR>', { desc = 'CopilotChat - Explain code' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFixDiagnostic<CR>', { desc = 'CopilotChat - Fix Diagnostic' })
 
 -- Git / Neogit
 vim.keymap.set('n', '<leader>gg', '<cmd>Neogit<CR>', { desc = 'Open Neogit status' })
