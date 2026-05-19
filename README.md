@@ -1,8 +1,19 @@
 # Neovim Configuration
+# 🌟 Neovim Configuration
 
 Personal Neovim configuration managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
+A modern, feature-rich Neovim setup built with `lazy.nvim`.
 
 ## Plugins
+## 🚀 Features
+* **Plugin Management:** `lazy.nvim`
+* **LSP & Formatting:** Mason, nvim-lspconfig, Conform, nvim-lint
+* **Autocompletion:** nvim-cmp, LuaSnip, Copilot
+* **UI & Theming:** Nightfox, Tokyonight, Lualine, Indent Blankline
+* **Navigation & File Management:** Telescope, Neo-tree, Oil
+* **Git Integration:** Neogit, Gitsigns, Diffview
+* **Debugging:** nvim-dap, dap-ui
+* **Editor Enhancements:** Treesitter context, Auto-save, Autopairs, Todo-comments, Illuminate
 
 | Category | Plugins |
 |----------|---------|
@@ -17,14 +28,28 @@ Personal Neovim configuration managed with [lazy.nvim](https://github.com/folke/
 | AI | `copilot.lua`, `CopilotChat.nvim` |
 | UI | `lualine.nvim`, `which-key.nvim`, `indent-blankline.nvim`, `nvim-web-devicons` |
 | Productivity | `todo-comments.nvim`, `nvim-autopairs`, `vim-illuminate`, `project.nvim` |
+## ⌨️ Keybindings
 
 ## Prerequisites
+**Leader Key:** `Space` (`<leader>`)  
+**Local Leader:** `\` (`<localleader>`)  
 
 - **Neovim** >= 0.9.0
 - **Git**
 - **ripgrep** — required for Telescope live grep
 - **Node.js** >= 18.x — required for GitHub Copilot
 - **Nerd Font** — required for icons
+### 📁 File Explorer & Search
+| Key | Description |
+|-----|-------------|
+| `<leader>ff` | Telescope find files |
+| `<leader>fg` | Telescope live grep |
+| `<leader>fb` | Telescope buffers |
+| `<leader>fc` | Telescope colorscheme (with live preview) |
+| `<leader>fh` | Telescope help tags |
+| `<leader>fp` | Find Projects |
+| `<leader>fe` | Open Oil file explorer (buffer editing) |
+| `<leader>ft` | Toggle Neo-tree file explorer (sidebar) |
 
 ## Installation
 
@@ -62,10 +87,15 @@ Leader key: `Space`
 
 | Key | Action |
 |-----|--------|
+### 🛠️ LSP & Diagnostics
+| Key | Description |
+|-----|-------------|
+| `gD` | Go to declaration |
 | `gd` | Go to definition |
 | `gD` | Go to declaration |
 | `gr` | Find references |
 | `gi` | Go to implementation |
+| `gr` | Go to references |
 | `K` | Hover documentation |
 | `<C-k>` | Signature help |
 | `<leader>rn` | Rename symbol |
@@ -79,9 +109,23 @@ Leader key: `Space`
 | `[d` | Previous diagnostic |
 | `]d` | Next diagnostic |
 | `<leader>q` | Open location list |
+| `<leader>ca` | Code action |
+| `<leader>e` | Show diagnostic error messages (float) |
+| `[d` / `]d` | Previous / Next diagnostic message |
+| `<leader>q` | Open diagnostic quickfix list |
 | `<leader>x` | Close location list |
+| `<leader>f` | Format buffer (Conform) |
 
 ### Completion
+### 🤖 Copilot & AI
+| Key (Mode) | Description |
+|------------|-------------|
+| `<M-]>` (i) | Next Copilot suggestion (Alt + `]`) |
+| `<M-[>` (i) | Previous Copilot suggestion (Alt + `[`) |
+| `<C-]>` (i) | Dismiss Copilot suggestion (Ctrl + `]`) |
+| `<leader>cct` | Toggle Copilot Chat |
+| `<leader>cce` | Copilot Chat: Explain code (Normal/Visual) |
+| `<leader>ccf` | Copilot Chat: Fix diagnostic (Normal/Visual) |
 
 | Key | Action |
 |-----|--------|
@@ -91,6 +135,12 @@ Leader key: `Space`
 | `<C-Space>` | Trigger completion manually |
 | `<C-e>` | Abort completion |
 | `<C-b>` / `<C-f>` | Scroll docs |
+### 🌿 Git
+| Key | Description |
+|-----|-------------|
+| `<leader>gg` | Open Neogit status |
+| `<leader>gd` | Open Diffview |
+| `<leader>gh` | File Git history (Diffview) |
 
 ### Git
 
@@ -106,14 +156,30 @@ Leader key: `Space`
 
 | Key | Action |
 |-----|--------|
+### 🐛 Debugging (DAP)
+| Key | Description |
+|-----|-------------|
 | `<leader>db` | Toggle breakpoint |
 | `<leader>dc` | Continue |
 | `<leader>di` | Step into |
 | `<leader>do` | Step over |
 | `<leader>dO` | Step out |
+| `<leader>dc` | DAP continue |
+| `<leader>di` | DAP step into |
+| `<leader>do` | DAP step over |
+| `<leader>dO` | DAP step out |
 | `<leader>du` | Toggle DAP UI |
 
 ### AI (Copilot)
+### ⌨️ Completion (Insert Mode)
+| Key | Description |
+|-----|-------------|
+| `<Tab>` | Accept Copilot / Select Next Item / Expand Snippet |
+| `<S-Tab>` | Select Previous Item |
+| `<CR>` | Confirm selection |
+| `<C-Space>` | Trigger completion |
+| `<C-e>` | Abort completion |
+| `<C-b>` / `<C-f>`| Scroll docs up / down |
 
 | Key | Action |
 |-----|--------|
@@ -124,6 +190,10 @@ Leader key: `Space`
 | `<leader>cct` | Toggle Copilot Chat |
 | `<leader>cce` | Explain selected code |
 | `<leader>ccf` | Fix diagnostic under cursor |
+### 🧹 Utility
+| Key | Description |
+|-----|-------------|
+| `<Esc>` | Clear search highlighting & close open floating windows |
 
 ### Splits & Tabs
 
@@ -141,3 +211,6 @@ Leader key: `Space`
 | Key | Action |
 |-----|--------|
 | `<Esc>` | Clear search highlight + close floats |
+## ⚙️ Custom Commands
+* `:ASToggle` - Toggle Auto-save
+* `:MergeTool` - Open Diffview as a merge tool
