@@ -59,6 +59,21 @@ vim.keymap.set("n", "<Esc>", function()
   -- Clear search highlighting
   vim.cmd("noh")
   
+  -- Close Diffview if it's active in the current tab
+  local is_diffview = false
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local name = vim.api.nvim_buf_get_name(buf)
+    local ft = vim.bo[buf].filetype
+    if ft == "DiffviewFiles" or ft == "DiffviewFileHistory" or name:match("^diffview://") then
+      is_diffview = true
+      break
+    end
+  end
+  if is_diffview then
+    vim.cmd("DiffviewClose")
+  end
+
   -- Close any open floating windows
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     local config = vim.api.nvim_win_get_config(win)
@@ -66,4 +81,4 @@ vim.keymap.set("n", "<Esc>", function()
       vim.api.nvim_win_close(win, false)
     end
   end
-end, { desc = "Clear search and close floating windows" })
+end, { desc = "Clear search, close floats and Diffview" })

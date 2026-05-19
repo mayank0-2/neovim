@@ -97,6 +97,7 @@ Leader key: `Space`
 | `<leader>gg` | Git status | Neogit |
 | `<leader>gd` | Diff view | Diffview |
 | `<leader>gh` | File git history | Diffview |
+| `<leader>gc` | Close diff view | Diffview |
 
 **Neogit quick reference:** `c c` commit · `P p` push · `p p` pull · `r` rebase menu
 
@@ -110,6 +111,21 @@ Leader key: `Space`
 | `<leader>do` | Step over |
 | `<leader>dO` | Step out |
 | `<leader>du` | Toggle DAP UI |
+
+### ⌨️ Completion (Insert Mode)
+| Key | Description |
+|-----|-------------|
+| `<Tab>` | Select Next Item / Expand Snippet |
+| `<S-Tab>` | Select Previous Item |
+| `<CR>` | Confirm selection |
+| `<C-Space>` | Trigger completion |
+| `<C-e>` | Abort completion |
+| `<C-b>` / `<C-f>`| Scroll docs up / down |
+
+### 🧹 Utility
+| Key | Description |
+|-----|-------------|
+| `<Esc>` | Clear search highlighting, close open floats, and close Diffview |
 
 ### Splits & Tabs
 
@@ -126,4 +142,7 @@ Leader key: `Space`
 
 | Key | Action |
 |-----|--------|
-| `<Esc>` | Clear search highlight + close floats |
+| `<Esc>` | Clear search highlight + close floats + close Diffview |
+## ⚙️ Custom Commands
+* `:ASToggle` - Toggle Auto-save
+* `:MergeTool` - Open Diffview as a merge tool
