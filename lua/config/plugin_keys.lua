@@ -55,6 +55,14 @@ vim.keymap.set('n', '<leader>do', function() require("dap").step_over() end, { d
 vim.keymap.set('n', '<leader>dO', function() require("dap").step_out() end, { desc = 'DAP step out' })
 vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, { desc = 'Toggle DAP UI' })
 
+-- Harpoon
+vim.keymap.set("n", "<leader>a", function() require("harpoon"):list():add() end, { desc = "Harpoon add file" })
+vim.keymap.set("n", "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, { desc = "Harpoon quick menu" })
+vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end, { desc = "Harpoon file 1" })
+vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end, { desc = "Harpoon file 2" })
+vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end, { desc = "Harpoon file 3" })
+vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end, { desc = "Harpoon file 4" })
+
 -- Utility / Universal Close
 vim.keymap.set("n", "<Esc>", function()
   -- Clear search highlighting
