@@ -18,7 +18,7 @@ return {
         "ty",    -- Python
         "ts_ls",      -- JS/TS
         "elixirls",   -- Elixir
-        "jdtls",      -- Java
+        "java_language_server",      -- Java
       },
       handlers = {
         function(server_name)
