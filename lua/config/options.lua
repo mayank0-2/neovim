@@ -15,7 +15,7 @@ vim.diagnostic.config({
 		source = "if_many",
 	},
 	signs = true,
-	underline = true,
+	underline = { severity = { min = vim.diagnostic.severity.ERROR } },
 	update_in_insert = false,
 	severity_sort = true,
 })

@@ -72,6 +72,10 @@ return {
         end,
       },
     })
-
+		vim.diagnostic.config({
+				virtual_text = {
+					severity = { min = vim.diagnostic.severity.ERROR },
+				},
+		})
   end,
 }
