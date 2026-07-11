@@ -1,5 +1,9 @@
 return {
   "mfussenegger/nvim-dap",
+  -- Lazy-load on first use (the <leader>d* keymaps require("dap")). Keeps DAP
+  -- off the startup path so it can't race with mason-tool-installer's
+  -- run_on_start Mason activity, which briefly left adapter paths empty.
+  lazy = true,
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/nvim-nio",

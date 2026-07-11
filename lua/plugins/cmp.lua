@@ -4,7 +4,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",     -- LSP source for nvim-cmp
     "hrsh7th/cmp-buffer",       -- Buffer text source
     "hrsh7th/cmp-path",         -- File system path source
-    "L3MON4D3/LuaSnip",         -- Snippet engine (required by cmp)
+    { "L3MON4D3/LuaSnip", build = "make install_jsregexp" }, -- Snippet engine (required by cmp)
     "saadparwaiz1/cmp_luasnip", -- Snippet source
   },
   config = function()
