@@ -8,8 +8,8 @@ return {
 				"icon",
 			},
 			skip_confirm_for_simple_edits = true,
-			delete_to_trash = false,
-			autosave_changes = true,
+			delete_to_trash = true,
+			autosave_changes = false,
 			win_options = {
 				wrap = true,	
 			}

@@ -29,14 +29,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts) -- Ctrl + k
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    local tb = require('telescope.builtin')
+    -- Navigation via Telescope pickers (searchable + previewable).
+    vim.keymap.set('n', 'gd', tb.lsp_definitions, vim.tbl_extend('force', opts, { desc = 'LSP: go to definition' }))
+    vim.keymap.set('n', 'gi', tb.lsp_implementations, vim.tbl_extend('force', opts, { desc = 'LSP: go to implementation' }))
+    vim.keymap.set('n', 'gr', tb.lsp_references, vim.tbl_extend('force', opts, { desc = 'LSP: references' }))
+    vim.keymap.set('n', 'gy', tb.lsp_type_definitions, vim.tbl_extend('force', opts, { desc = 'LSP: type definition' }))
+    -- Direct LSP actions.
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend('force', opts, { desc = 'LSP: declaration' }))
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend('force', opts, { desc = 'LSP: hover' }))
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, vim.tbl_extend('force', opts, { desc = 'LSP: signature help' }))
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, vim.tbl_extend('force', opts, { desc = 'LSP: rename' }))
+    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, vim.tbl_extend('force', opts, { desc = 'LSP: code action' }))
   end,
 })
 

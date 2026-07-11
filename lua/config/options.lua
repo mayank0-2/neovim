@@ -1,5 +1,12 @@
 vim.g.lazyvim_picker = "telescope"
 
+-- Disable unused remote-plugin provider hosts (silences :checkhealth provider
+-- warnings). None of the installed plugins need these.
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
